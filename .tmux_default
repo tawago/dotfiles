@@ -1,0 +1,4 @@
+new -s default-session -n default-window
+selectp -t 0
+split-window -h
+resize-pane -L 15

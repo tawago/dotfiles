@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/tawago/tensorflow/52-pixel-forex/attemp'
+let g:netrw_dirhist_2='/Users/tawago/redux/examples/async/dist'
+let g:netrw_dirhist_3='/Users/tawago/dotfiles'
+let g:netrw_dirhist_4='/Users/tawago/.vim'
