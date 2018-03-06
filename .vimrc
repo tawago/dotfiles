@@ -12,5 +12,5 @@ set encoding=utf-8
 set fileencodings=iso-2022-jp,utf-8,cp932,sjis,euc-jp
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%82v.\+/
 
