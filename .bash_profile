@@ -1,18 +1,30 @@
 export PATH=/usr/local:$PATH
-export LANG=en_us.utf-8
-export LC_ALL=en_us.utf-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 #!/usr/bin/env bash
 
+export PYENV_ROOT="$HOME/.pyenv"
+
+export PYENV_ROOT="/usr/local/var/pyenv"
+eval "$(pyenv init -)"
+
 ## tmux setting
-alias tmux='tmux source-file ~/.tmux_default'
+alias tmux_c='tmux source-file ~/.tmux_default'
 
-##CUDA
+## CUDA
 export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
-#export DYLD_LIBRARY_PATH=`/usr/local/cuda/lib`:$DYLD_LIBRARY_PATH
 
-##NODEBREW
-#export PATH=$HOME/.nodebrew/current/bin:$PATH
+## NODEBREW
 export NODEBREW_ROOT=/usr/local/Cellar/nodebrew
+export PATH=/usr/local/Cellar/node/12.8.1/bin:$PATH
+
+## Android 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 
 #typo auto fix
 shopt -s cdspell
