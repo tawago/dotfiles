@@ -3,20 +3,25 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 #!/usr/bin/env bash
 
-export PYENV_ROOT="$HOME/.pyenv"
+alias ls_n='stat -c "%a %n" *'
+alias gitto='git checkout $(git branch -a | fzf)'
+alias z='cd $(ghq list --full-path | fzf)'
+alias @='fzf'
 
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_ROOT="/usr/local/var/pyenv"
 eval "$(pyenv init -)"
+
+#nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
 
 ## tmux setting
 alias tmux_c='tmux source-file ~/.tmux_default'
 
 ## CUDA
 export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
-
-## NODEBREW
-export NODEBREW_ROOT=/usr/local/Cellar/nodebrew
-export PATH=/usr/local/Cellar/node/12.8.1/bin:$PATH
 
 ## Android 
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -147,3 +152,15 @@ PS1+="${style_path}\w" # Working directory
 PS1+="\$(prompt_git)" # Git details
 PS1+="\n" # Newline
 PS1+="${style_chars}\$ \[${RESET}\]" # $ (and reset color)
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/takahiro_ogawa/google-cloud-sdk/path.bash.inc' ]; then . '/Users/takahiro_ogawa/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/takahiro_ogawa/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/takahiro_ogawa/google-cloud-sdk/completion.bash.inc'; fi
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
